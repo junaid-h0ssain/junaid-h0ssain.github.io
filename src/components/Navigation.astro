@@ -1,6 +1,7 @@
 ---
+import { getPathWithBase } from '../utils/path';
 ---
-<a href="/">Home</a>
-<a href="/about/">About</a>
-<a href="/blogs/">Blog</a>
-<a href="/tags/">Tags</a>
+<a href={getPathWithBase('/')}>Home</a>
+<a href={getPathWithBase('/about/')}>About</a>
+<a href={getPathWithBase('/blogs/')}>Blog</a>
+<a href={getPathWithBase('/tags/')}>Tags</a>
