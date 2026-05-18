@@ -7,17 +7,17 @@
   <meta name="description"
     content="Welcome to Junaid Hossain's portfolio, a backend developer building reliable software experiences." />
   <meta name="theme-color" content="#17352b" />
-    <script>
-      try {
-        const savedTheme = localStorage.getItem('theme-data');
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('theme-data');
 
-        if (savedTheme) {
-          document.documentElement.setAttribute('data-theme', savedTheme);
-        }
-      } catch (error) {
-        // Ignore storage access issues and fall back to the default theme.
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
       }
-    </script>
+    } catch (error) {
+      // Ignore storage access issues and fall back to the default theme.
+    }
+  </script>
   <link rel="icon" type="image/svg+xml" href="./pic/android-chrome-192x192.png" />
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -123,7 +123,7 @@
 
   <!-- hero  -->
   <div data-aos="zoom-in" data-aos-delay="50" data-aos-duration="1000" class="hero min-h-screen"
-    style="background-image: url(./pic/Screenshot_20260518_040248.webp);">
+    style="background-image: url(./pic/hero.webp);">
     <div class="hero-overlay"></div>
     <div class="hero-content text-neutral-content text-center">
       <div class="max-w-md">
@@ -291,7 +291,8 @@
     <div class="mx-auto mb-10 max-w-7xl text-center">
       <span class="badge badge-outline badge-lg px-4 py-4 text-sm uppercase tracking-[0.3em]">Projects</span>
       <h2 class="mt-6 text-4xl font-black">Selected work and experiments</h2>
-      <p class="mx-auto mt-4 max-w-2xl text-base-content/70">A focused snapshot of the projects I've built across web, backend, mobile, and embedded work.</p>
+      <p class="mx-auto mt-4 max-w-2xl text-base-content/70">A focused snapshot of the projects I've built across web,
+        backend, mobile, and embedded work.</p>
       <div class="mt-6">
         <a class="btn btn-primary" href="./projects.html">Open projects page</a>
       </div>
@@ -346,21 +347,21 @@
 
   <script>
     // animation 
-    AOS.init();
+    AOS.init({ mirror: true });
 
     // theme selector
     const themeSelect = document.getElementById('theme-select');
     const root = document.documentElement;
-      const savedTheme = localStorage.getItem('theme-data') || 'light';
+    const savedTheme = localStorage.getItem('theme-data') || 'light';
 
-      root.setAttribute('data-theme', savedTheme);
-      themeSelect.value = savedTheme;
+    root.setAttribute('data-theme', savedTheme);
+    themeSelect.value = savedTheme;
 
     themeSelect.addEventListener('change', (event) => {
-        const theme = event.target.value;
+      const theme = event.target.value;
 
-        root.setAttribute('data-theme', theme);
-        localStorage.setItem('theme-data', theme);
+      root.setAttribute('data-theme', theme);
+      localStorage.setItem('theme-data', theme);
     });
   </script>
 
