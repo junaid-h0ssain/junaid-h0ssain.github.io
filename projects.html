@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Projects by Junaid Hossain, including web, backend, mobile, and embedded work." />
+  <meta name="theme-color" content="#17352b" />
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('theme-data');
+
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+    } catch (error) {
+      // Ignore storage access issues and fall back to the default theme.
+    }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="./pic/android-chrome-192x192.png" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+  <title>Junaid Hossain - Projects</title>
+</head>
+
+<body>
+  <div class="navbar bg-base-100 shadow-sm">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+          </svg>
+        </div>
+        <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./pic/Resume - Junaid Hossain.pdf">Resume</a></li>
+          <li>
+            <details>
+              <summary>Contact</summary>
+              <ul class="p-2">
+                <li><a href="mailto:junaid0182@outlook.com">Mail</a></li>
+                <li><a href="https://github.com/junaid-h0ssain">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/junaid-h0ssain">LinkedIn</a></li>
+                <li><a href="https://www.instagram.com/junaid.h0ssain/">Instagram</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </div>
+      <a class="btn btn-ghost text-xl" href="./index.html">Junaid Hossain</a>
+    </div>
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./pic/Resume - Junaid Hossain.pdf">Resume</a></li>
+        <li>
+          <details>
+            <summary>Contact</summary>
+            <ul class="p-2 bg-base-100 w-40 z-1">
+              <li><a href="mailto:junaid0182@outlook.com">Mail</a></li>
+              <li><a href="https://github.com/junaid-h0ssain">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/junaid-h0ssain">LinkedIn</a></li>
+              <li><a href="https://www.instagram.com/junaid.h0ssain/">Instagram</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-end">
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">Theme</legend>
+        <select id="theme-select" class="select" aria-label="Theme selector">
+          <option value="light" selected>Light</option>
+          <option value="dark">Dark</option>
+          <option value="cupcake">Cupcake</option>
+          <option value="bumblebee">Bumblebee</option>
+          <option value="emerald">Emerald</option>
+          <option value="corporate">Corporate</option>
+          <option value="synthwave">Synthwave</option>
+          <option value="retro">Retro</option>
+          <option value="cyberpunk">Cyberpunk</option>
+          <option value="valentine">Valentine</option>
+          <option value="halloween">Halloween</option>
+          <option value="garden">Garden</option>
+          <option value="forest">Forest</option>
+          <option value="aqua">Aqua</option>
+          <option value="lofi">Lofi</option>
+          <option value="pastel">Pastel</option>
+          <option value="fantasy">Fantasy</option>
+          <option value="wireframe">Wireframe</option>
+          <option value="black">Black</option>
+          <option value="luxury">Luxury</option>
+          <option value="dracula">Dracula</option>
+          <option value="cmyk">CMYK</option>
+          <option value="autumn">Autumn</option>
+          <option value="business">Business</option>
+          <option value="acid">Acid</option>
+          <option value="lemonade">Lemonade</option>
+          <option value="night">Night</option>
+          <option value="coffee">Coffee</option>
+          <option value="winter">Winter</option>
+          <option value="dim">Dim</option>
+          <option value="nord">Nord</option>
+          <option value="sunset">Sunset</option>
+          <option value="caramellatte">Caramellatte</option>
+          <option value="abyss">Abyss</option>
+          <option value="silk">Silk</option>
+        </select>
+        <span class="label">Have Fun</span>
+      </fieldset>
+    </div>
+  </div>
+
+  <main>
+    <section class="py-16 lg:py-20">
+      <div class="mx-auto max-w-7xl px-6 text-center">
+        <span class="badge badge-outline badge-lg px-4 py-4 text-sm uppercase tracking-[0.3em]">Projects</span>
+        <h1 class="mt-6 text-4xl font-black lg:text-5xl">Things I have built</h1>
+        <p class="mx-auto mt-4 max-w-2xl text-base leading-8 text-base-content/70">
+          A collection of web apps, backend services, mobile projects, and experiments that show the stack I work in.
+        </p>
+      </div>
+    </section>
+
+    <section class="p-10 pt-0">
+      <div class="mx-auto grid max-w-7xl gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div data-aos="flip-right" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
+          <figure>
+            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Next.js Learn Project" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              next-js-learn
+              <div class="badge badge-secondary">Vercel</div>
+            </h2>
+            <p>An event management and discovery platform built with Next.js, featuring interactive 3D graphics,
+              animations, and a MongoDB backend.</p>
+            <div class="card-actions justify-end">
+              <div class="badge badge-outline">Next.js</div>
+              <div class="badge badge-outline">MongoDB</div>
+              <div class="badge badge-outline">Three.js</div>
+            </div>
+            <div class="card-actions justify-end">
+              <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/next-js-learn" target="_blank"
+                rel="noreferrer">Repo</a>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="flip-up" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
+          <figure>
+            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Pizza Tracker" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              pizza-tracker
+              <div class="badge badge-secondary">Go</div>
+            </h2>
+            <p>A real-time pizza order tracking web application built with Go, featuring live status updates,
+              customer tracking, and an admin dashboard.</p>
+            <div class="card-actions justify-end">
+              <div class="badge badge-outline">Go</div>
+              <div class="badge badge-outline">Gin</div>
+              <div class="badge badge-outline">SQLite</div>
+            </div>
+            <div class="card-actions justify-end">
+              <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/pizza-tracker" target="_blank"
+                rel="noreferrer">Repo</a>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="flip-left" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
+          <figure>
+            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="FunAPI" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              fun-api
+              <div class="badge badge-secondary">Python</div>
+            </h2>
+            <p>A minimal, decorator-based Python web framework built on top of the WSGI standard, designed to keep
+              routing and middleware simple.</p>
+            <div class="card-actions justify-end">
+              <div class="badge badge-outline">Python</div>
+              <div class="badge badge-outline">WSGI</div>
+              <div class="badge badge-outline">Gunicorn</div>
+            </div>
+            <div class="card-actions justify-end">
+              <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/fun-api" target="_blank"
+                rel="noreferrer">Repo</a>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="flip-right" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
+          <figure>
+            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Web Code Editor" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              web-code-editor
+              <div class="badge badge-secondary">JavaScript</div>
+            </h2>
+            <p>A simple in-browser editor for HTML, CSS, and JavaScript with a live preview panel and console output.</p>
+            <div class="card-actions justify-end">
+              <div class="badge badge-outline">HTML</div>
+              <div class="badge badge-outline">CSS</div>
+              <div class="badge badge-outline">JavaScript</div>
+            </div>
+            <div class="card-actions justify-end">
+              <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/web-code-editor" target="_blank"
+                rel="noreferrer">Repo</a>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="flip-up" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
+          <figure>
+            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Expo Todo App" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              expo-todo
+              <div class="badge badge-secondary">React Native</div>
+            </h2>
+            <p>A todo application built with React Native and Expo, evolving from local AsyncStorage persistence to an
+              online Convex-backed version with tabbed navigation and dark mode support.</p>
+            <div class="card-actions justify-end">
+              <div class="badge badge-outline">Expo</div>
+              <div class="badge badge-outline">TypeScript</div>
+              <div class="badge badge-outline">Convex</div>
+            </div>
+            <div class="card-actions justify-end">
+              <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/expo-todo" target="_blank"
+                rel="noreferrer">Repo</a>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="flip-left" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
+          <figure>
+            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Small Go Projects" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              small-go-projects
+              <div class="badge badge-secondary">Go</div>
+            </h2>
+            <p>A collection of small Go projects demonstrating web APIs, CRUD endpoints, and Slack integrations.</p>
+            <div class="card-actions justify-end">
+              <div class="badge badge-outline">Go</div>
+              <div class="badge badge-outline">Fiber</div>
+              <div class="badge badge-outline">Slack API</div>
+            </div>
+            <div class="card-actions justify-end">
+              <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/small-go-projects" target="_blank"
+                rel="noreferrer">Repo</a>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="flip-up" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
+          <figure>
+            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Krishi Rokkha" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              krishi-rokkha
+              <div class="badge badge-secondary">JavaScript</div>
+            </h2>
+            <p>A farmer-focused web app with AI crop disease detection, weather risk assessment, and crop batch
+              management support.</p>
+            <div class="card-actions justify-end">
+              <div class="badge badge-outline">Vite</div>
+              <div class="badge badge-outline">Firebase</div>
+              <div class="badge badge-outline">Three.js</div>
+            </div>
+            <div class="card-actions justify-end">
+              <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/krishi-rokkha" target="_blank"
+                rel="noreferrer">Repo</a>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="flip-right" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
+          <figure>
+            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Clone Reddit" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              clonereddit
+              <div class="badge badge-secondary">Java</div>
+            </h2>
+            <p>A simplified Reddit-like application built with Spring Boot for user authentication and post management.
+            </p>
+            <div class="card-actions justify-end">
+              <div class="badge badge-outline">Spring Boot</div>
+              <div class="badge badge-outline">Spring Security</div>
+              <div class="badge badge-outline">H2</div>
+            </div>
+            <div class="card-actions justify-end">
+              <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/clonereddit" target="_blank"
+                rel="noreferrer">Repo</a>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="flip-left" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
+          <figure>
+            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="HealthWeb" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              healthweb
+              <div class="badge badge-secondary">PHP</div>
+            </h2>
+            <p>A PHP-based health and wellness portal with pages for doctors, symptoms, medicines, wellness programs,
+              and basic session-based profile and login support.</p>
+            <div class="card-actions justify-end">
+              <div class="badge badge-outline">PHP</div>
+              <div class="badge badge-outline">MySQL</div>
+              <div class="badge badge-outline">JavaScript</div>
+            </div>
+            <div class="card-actions justify-end">
+              <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/healthweb" target="_blank"
+                rel="noreferrer">Repo</a>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="flip-up" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
+          <figure>
+            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="BookTracker" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              booktracker2
+              <div class="badge badge-secondary">Flutter</div>
+            </h2>
+            <p>A Flutter app for tracking books across home, library, login, and settings pages with sqflite-based
+              storage.</p>
+            <div class="card-actions justify-end">
+              <div class="badge badge-outline">Flutter</div>
+              <div class="badge badge-outline">Dart</div>
+              <div class="badge badge-outline">sqflite</div>
+            </div>
+            <div class="card-actions justify-end">
+              <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/booktracker2" target="_blank"
+                rel="noreferrer">Repo</a>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="flip-right" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
+          <figure>
+            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Fake News Detector" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              fake_news_detector
+              <div class="badge badge-secondary">Python</div>
+            </h2>
+            <p>A fake news detection project that uses NLP preprocessing, TF-IDF features, and a Logistic Regression
+              classifier.</p>
+            <div class="card-actions justify-end">
+              <div class="badge badge-outline">Python</div>
+              <div class="badge badge-outline">Jupyter</div>
+              <div class="badge badge-outline">scikit-learn</div>
+            </div>
+            <div class="card-actions justify-end">
+              <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/fake_news_detector" target="_blank"
+                rel="noreferrer">Repo</a>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="flip-left" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
+          <figure>
+            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Music Genre Detector" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              music_genre_detector
+              <div class="badge badge-secondary">Python</div>
+            </h2>
+            <p>A Flask web app that predicts music genres from uploaded audio using librosa feature extraction and
+              scikit-learn classifiers.</p>
+            <div class="card-actions justify-end">
+              <div class="badge badge-outline">Flask</div>
+              <div class="badge badge-outline">librosa</div>
+              <div class="badge badge-outline">scikit-learn</div>
+            </div>
+            <div class="card-actions justify-end">
+              <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/music_genre_detector" target="_blank"
+                rel="noreferrer">Repo</a>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="flip-up" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
+          <figure>
+            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="DHTtester" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">
+              DHTtester
+              <div class="badge badge-secondary">C++</div>
+            </h2>
+            <p>A weather monitoring system using ESP32 and the Blynk app for reporting sensor data.</p>
+            <div class="card-actions justify-end">
+              <div class="badge badge-outline">C++</div>
+              <div class="badge badge-outline">ESP32</div>
+              <div class="badge badge-outline">Blynk</div>
+            </div>
+            <div class="card-actions justify-end">
+              <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/DHTtester" target="_blank"
+                rel="noreferrer">Repo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
+    <aside>
+      <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+        clip-rule="evenodd" class="fill-current">
+        <path
+          d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z">
+        </path>
+      </svg>
+      <p>
+        Junaid Hossain
+        <br />
+        Halishahar, Chattogram, Bangladesh
+      </p>
+    </aside>
+    <nav>
+      <h6 class="footer-title">Social</h6>
+      <div class="grid grid-flow-col gap-4">
+        <a href="https://github.com/junaid-h0ssain" target="_blank" rel="noreferrer" aria-label="GitHub profile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+            <path
+              d="M12 0.5C5.65 0.5 0.5 5.68 0.5 12.09c0 5.12 3.29 9.47 7.86 11.01.58.11.79-.25.79-.56 0-.28-.01-1.02-.01-2-3.2.71-3.88-1.56-3.88-1.56-.52-1.35-1.28-1.71-1.28-1.71-1.05-.73.08-.72.08-.72 1.16.08 1.77 1.2 1.77 1.2 1.03 1.79 2.7 1.27 3.36.97.11-.76.4-1.27.72-1.56-2.56-.29-5.25-1.3-5.25-5.79 0-1.28.45-2.32 1.2-3.14-.12-.29-.52-1.48.11-3.08 0 0 .98-.32 3.2 1.2.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.22-1.52 3.2-1.2 3.2-1.2.63 1.6.23 2.79.11 3.08.75.82 1.2 1.86 1.2 3.14 0 4.5-2.69 5.5-5.25 5.79.41.36.78 1.08.78 2.18 0 1.57-.01 2.84-.01 3.23 0 .31.21.68.8.56A11.59 11.59 0 0 0 23.5 12.09C23.5 5.68 18.35 0.5 12 0.5Z">
+            </path>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/junaid-h0ssain" target="_blank" rel="noreferrer"
+          aria-label="LinkedIn profile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+            <path
+              d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.33V9h3.42v1.56h.05c.48-.91 1.66-1.86 3.42-1.86 3.66 0 4.34 2.41 4.34 5.54v6.21ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.78C.8 0 0 .77 0 1.73v20.54C0 23.23.8 24 1.78 24h20.44c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z">
+            </path>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/junaid.h0ssain/" target="_blank" rel="noreferrer"
+          aria-label="Instagram profile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+            <path
+              d="M7.75 0h8.5C20.53 0 24 3.47 24 7.75v8.5C24 20.53 20.53 24 16.25 24h-8.5C3.47 24 0 20.53 0 16.25v-8.5C0 3.47 3.47 0 7.75 0Zm0 2A5.76 5.76 0 0 0 2 7.75v8.5A5.76 5.76 0 0 0 7.75 22h8.5A5.76 5.76 0 0 0 22 16.25v-8.5A5.76 5.76 0 0 0 16.25 2h-8.5Zm10.6 1.65a1.35 1.35 0 1 1 0 2.7 1.35 1.35 0 0 1 0-2.7ZM12 6.3A5.7 5.7 0 1 1 6.3 12 5.71 5.71 0 0 1 12 6.3Zm0 2a3.7 3.7 0 1 0 3.7 3.7A3.71 3.71 0 0 0 12 8.3Z">
+            </path>
+          </svg>
+        </a>
+      </div>
+    </nav>
+  </footer>
+
+  <script>
+    AOS.init();
+
+    const themeSelect = document.getElementById('theme-select');
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem('theme-data') || 'light';
+
+    root.setAttribute('data-theme', savedTheme);
+    themeSelect.value = savedTheme;
+
+    themeSelect.addEventListener('change', (event) => {
+      const theme = event.target.value;
+
+      root.setAttribute('data-theme', theme);
+      localStorage.setItem('theme-data', theme);
+    });
+  </script>
+</body>
+
+</html>

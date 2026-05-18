@@ -18,7 +18,7 @@
         // Ignore storage access issues and fall back to the default theme.
       }
     </script>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="./pic/android-chrome-192x192.png" />
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
@@ -41,7 +41,7 @@
           </svg>
         </div>
         <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-          <li><a>Projects</a></li>
+          <li><a href="./projects.html">Projects</a></li>
           <li><a href="./pic/Resume - Junaid Hossain.pdf">Resume</a></li>
           <li>
             <details>
@@ -60,7 +60,7 @@
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
-        <li><a>Projects</a></li>
+        <li><a href="./projects.html">Projects</a></li>
         <li><a href="./pic/Resume - Junaid Hossain.pdf">Resume</a></li>
         <li>
           <details>
@@ -287,310 +287,14 @@
   </section>
 
 
-  <!-- projects  -->
-
   <section class="p-10">
     <div class="mx-auto mb-10 max-w-7xl text-center">
       <span class="badge badge-outline badge-lg px-4 py-4 text-sm uppercase tracking-[0.3em]">Projects</span>
-    </div>
-    <div class="mx-auto grid max-w-7xl gap-6 md:grid-cols-2 xl:grid-cols-3">
-      <div data-aos="flip-right" data-aos-delay="100" data-aos-duration="2000"
-        class="card bg-base-100 w-full shadow-sm">
-        <figure>
-          <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Next.js Learn Project" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">
-            next-js-learn
-            <div class="badge badge-secondary">GitHub</div>
-          </h2>
-          <p>An event management and discovery platform built with Next.js, featuring interactive 3D graphics,
-            animations, and a MongoDB backend.</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Next.js</div>
-            <div class="badge badge-outline">MongoDB</div>
-            <div class="badge badge-outline">Three.js</div>
-          </div>
-          <div class="card-actions justify-end">
-            <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/next-js-learn" target="_blank"
-              rel="noreferrer">Repo</a>
-          </div>
-        </div>
+      <h2 class="mt-6 text-4xl font-black">Selected work and experiments</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-base-content/70">A focused snapshot of the projects I've built across web, backend, mobile, and embedded work.</p>
+      <div class="mt-6">
+        <a class="btn btn-primary" href="./projects.html">Open projects page</a>
       </div>
-
-      <div data-aos="flip-up" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
-        <figure>
-          <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Pizza Tracker" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">
-            pizza-tracker
-            <div class="badge badge-secondary">Go</div>
-          </h2>
-          <p>A real-time pizza order tracking web application built with Go, featuring live status updates,
-            customer tracking, and an admin dashboard.</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Go</div>
-            <div class="badge badge-outline">Gin</div>
-            <div class="badge badge-outline">SQLite</div>
-          </div>
-          <div class="card-actions justify-end">
-            <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/pizza-tracker" target="_blank"
-              rel="noreferrer">Repo</a>
-          </div>
-        </div>
-      </div>
-
-      <div data-aos="flip-left" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
-        <figure>
-          <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="FunAPI" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">
-            fun-api
-            <div class="badge badge-secondary">Python</div>
-          </h2>
-          <p>A minimal, decorator-based Python web framework built on top of the WSGI standard, designed to keep
-            routing and middleware simple.</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Python</div>
-            <div class="badge badge-outline">WSGI</div>
-            <div class="badge badge-outline">Gunicorn</div>
-          </div>
-          <div class="card-actions justify-end">
-            <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/fun-api" target="_blank"
-              rel="noreferrer">Repo</a>
-          </div>
-        </div>
-      </div>
-
-      <div data-aos="flip-right" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
-        <figure>
-          <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Web Code Editor" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">
-            web-code-editor
-            <div class="badge badge-secondary">JavaScript</div>
-          </h2>
-          <p>A simple in-browser editor for HTML, CSS, and JavaScript with a live preview panel and console output.</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">HTML</div>
-            <div class="badge badge-outline">CSS</div>
-            <div class="badge badge-outline">JavaScript</div>
-          </div>
-          <div class="card-actions justify-end">
-            <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/web-code-editor" target="_blank"
-              rel="noreferrer">Repo</a>
-          </div>
-        </div>
-      </div>
-
-      <div data-aos="flip-up" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
-        <figure>
-          <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Expo Todo App" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">
-            expo-todo
-            <div class="badge badge-secondary">React Native</div>
-          </h2>
-          <p>A todo application built with React Native and Expo, evolving from local AsyncStorage persistence to an
-            online Convex-backed version with tabbed navigation and dark mode support.</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Expo</div>
-            <div class="badge badge-outline">TypeScript</div>
-            <div class="badge badge-outline">Convex</div>
-          </div>
-          <div class="card-actions justify-end">
-            <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/expo-todo" target="_blank"
-              rel="noreferrer">Repo</a>
-          </div>
-        </div>
-      </div>
-
-      <div data-aos="flip-left" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
-        <figure>
-          <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Small Go Projects" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">
-            small-go-projects
-            <div class="badge badge-secondary">Go</div>
-          </h2>
-          <p>A collection of small Go projects demonstrating web APIs, CRUD endpoints, and Slack integrations.</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Go</div>
-            <div class="badge badge-outline">Fiber</div>
-            <div class="badge badge-outline">Slack API</div>
-          </div>
-          <div class="card-actions justify-end">
-            <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/small-go-projects" target="_blank"
-              rel="noreferrer">Repo</a>
-          </div>
-        </div>
-      </div>
-
-      <div data-aos="flip-up" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
-        <figure>
-          <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Krishi Rokkha" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">
-            krishi-rokkha
-            <div class="badge badge-secondary">JavaScript</div>
-          </h2>
-          <p>A farmer-focused web app with AI crop disease detection, weather risk assessment, and crop batch
-            management support.</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Vite</div>
-            <div class="badge badge-outline">Firebase</div>
-            <div class="badge badge-outline">Three.js</div>
-          </div>
-          <div class="card-actions justify-end">
-            <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/krishi-rokkha" target="_blank"
-              rel="noreferrer">Repo</a>
-          </div>
-        </div>
-      </div>
-
-      <div data-aos="flip-right" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
-        <figure>
-          <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Clone Reddit" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">
-            clonereddit
-            <div class="badge badge-secondary">Java</div>
-          </h2>
-          <p>A simplified Reddit-like application built with Spring Boot for user authentication and post management.
-          </p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Spring Boot</div>
-            <div class="badge badge-outline">Spring Security</div>
-            <div class="badge badge-outline">H2</div>
-          </div>
-          <div class="card-actions justify-end">
-            <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/clonereddit" target="_blank"
-              rel="noreferrer">Repo</a>
-          </div>
-        </div>
-      </div>
-
-      <div data-aos="flip-left" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
-        <figure>
-          <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="HealthWeb" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">
-            healthweb
-            <div class="badge badge-secondary">PHP</div>
-          </h2>
-          <p>A PHP-based health and wellness portal with pages for doctors, symptoms, medicines, wellness programs,
-            and basic session-based profile and login support.</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">PHP</div>
-            <div class="badge badge-outline">MySQL</div>
-            <div class="badge badge-outline">JavaScript</div>
-          </div>
-          <div class="card-actions justify-end">
-            <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/healthweb" target="_blank"
-              rel="noreferrer">Repo</a>
-          </div>
-        </div>
-      </div>
-
-      <div data-aos="flip-up" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
-        <figure>
-          <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="BookTracker" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">
-            booktracker2
-            <div class="badge badge-secondary">Flutter</div>
-          </h2>
-          <p>A Flutter app for tracking books across home, library, login, and settings pages with sqflite-based
-            storage.</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Flutter</div>
-            <div class="badge badge-outline">Dart</div>
-            <div class="badge badge-outline">sqflite</div>
-          </div>
-          <div class="card-actions justify-end">
-            <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/booktracker2" target="_blank"
-              rel="noreferrer">Repo</a>
-          </div>
-        </div>
-      </div>
-
-      <div data-aos="flip-right" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
-        <figure>
-          <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Fake News Detector" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">
-            fake_news_detector
-            <div class="badge badge-secondary">Python</div>
-          </h2>
-          <p>A fake news detection project that uses NLP preprocessing, TF-IDF features, and a Logistic Regression
-            classifier.</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Python</div>
-            <div class="badge badge-outline">Jupyter</div>
-            <div class="badge badge-outline">scikit-learn</div>
-          </div>
-          <div class="card-actions justify-end">
-            <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/fake_news_detector" target="_blank"
-              rel="noreferrer">Repo</a>
-          </div>
-        </div>
-      </div>
-
-      <div data-aos="flip-left" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
-        <figure>
-          <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Music Genre Detector" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">
-            music_genre_detector
-            <div class="badge badge-secondary">Python</div>
-          </h2>
-          <p>A Flask web app that predicts music genres from uploaded audio using librosa feature extraction and
-            scikit-learn classifiers.</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Flask</div>
-            <div class="badge badge-outline">librosa</div>
-            <div class="badge badge-outline">scikit-learn</div>
-          </div>
-          <div class="card-actions justify-end">
-            <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/music_genre_detector" target="_blank"
-              rel="noreferrer">Repo</a>
-          </div>
-        </div>
-      </div>
-
-      <div data-aos="flip-up" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
-        <figure>
-          <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="DHTtester" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">
-            DHTtester
-            <div class="badge badge-secondary">C++</div>
-          </h2>
-          <p>A weather monitoring system using ESP32 and the Blynk app for reporting sensor data.</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">C++</div>
-            <div class="badge badge-outline">ESP32</div>
-            <div class="badge badge-outline">Blynk</div>
-          </div>
-          <div class="card-actions justify-end">
-            <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/DHTtester" target="_blank"
-              rel="noreferrer">Repo</a>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
