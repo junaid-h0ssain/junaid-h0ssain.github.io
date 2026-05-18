@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Project details and README content for Junaid Hossain's GitHub repositories." />
+    <meta name="theme-color" content="#17352b" />
+    <script>
+        try {
+            const savedTheme = localStorage.getItem('theme-data');
+
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            }
+        } catch (error) {
+            // Ignore storage access issues and fall back to the default theme.
+        }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="./pic/android-chrome-192x192.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css" />
+    <title>Project README</title>
+</head>
+
+<body>
+    <div class="navbar bg-base-100 shadow-sm site-navbar">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h8m-8 6h16" />
+                    </svg>
+                </div>
+                <ul tabindex="-1"
+                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./projects.html">Projects</a></li>
+                    <li><a href="./resume.html">Resume</a></li>
+                    <li>
+                        <details>
+                            <summary>Contact</summary>
+                            <ul class="p-2">
+                                <li><a href="mailto:junaid0182@outlook.com">Mail</a></li>
+                                <li><a href="https://github.com/junaid-h0ssain">GitHub</a></li>
+                                <li><a href="https://www.linkedin.com/in/junaid-h0ssain">LinkedIn</a></li>
+                                <li><a href="https://www.instagram.com/junaid.h0ssain/">Instagram</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </div>
+            <a class="btn btn-ghost text-xl" href="./index.html">Junaid Hossain</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./projects.html">Projects</a></li>
+                <li><a href="./resume.html">Resume</a></li>
+                <li>
+                    <details>
+                        <summary>Contact</summary>
+                        <ul class="p-2 bg-base-100 w-40 z-1">
+                            <li><a href="mailto:junaid0182@outlook.com">Mail</a></li>
+                            <li><a href="https://github.com/junaid-h0ssain">GitHub</a></li>
+                            <li><a href="https://www.linkedin.com/in/junaid-h0ssain">LinkedIn</a></li>
+                            <li><a href="https://www.instagram.com/junaid.h0ssain/">Instagram</a></li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-end">
+            <fieldset class="fieldset">
+                <legend class="fieldset-legend">Theme</legend>
+                <select id="theme-select" class="select" aria-label="Theme selector">
+                    <option value="light" selected>Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="cupcake">Cupcake</option>
+                    <option value="bumblebee">Bumblebee</option>
+                    <option value="emerald">Emerald</option>
+                    <option value="corporate">Corporate</option>
+                    <option value="synthwave">Synthwave</option>
+                    <option value="retro">Retro</option>
+                    <option value="cyberpunk">Cyberpunk</option>
+                    <option value="valentine">Valentine</option>
+                    <option value="halloween">Halloween</option>
+                    <option value="garden">Garden</option>
+                    <option value="forest">Forest</option>
+                    <option value="aqua">Aqua</option>
+                    <option value="lofi">Lofi</option>
+                    <option value="pastel">Pastel</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="wireframe">Wireframe</option>
+                    <option value="black">Black</option>
+                    <option value="luxury">Luxury</option>
+                    <option value="dracula">Dracula</option>
+                    <option value="cmyk">CMYK</option>
+                    <option value="autumn">Autumn</option>
+                    <option value="business">Business</option>
+                    <option value="acid">Acid</option>
+                    <option value="lemonade">Lemonade</option>
+                    <option value="night">Night</option>
+                    <option value="coffee">Coffee</option>
+                    <option value="winter">Winter</option>
+                    <option value="dim">Dim</option>
+                    <option value="nord">Nord</option>
+                    <option value="sunset">Sunset</option>
+                    <option value="caramellatte">Caramellatte</option>
+                    <option value="abyss">Abyss</option>
+                    <option value="silk">Silk</option>
+                </select>
+                <span class="label">Have Fun</span>
+            </fieldset>
+        </div>
+    </div>
+
+    <main class="py-10 lg:py-16">
+        <section class="mx-auto max-w-6xl px-6">
+            <div class="rounded-3xl border border-base-300 bg-base-100 p-6 shadow-sm lg:p-10">
+                <div id="project-header" class="mb-8">
+                    <p class="text-sm uppercase tracking-[0.3em] text-base-content/50">Repository README</p>
+                    <h1 id="project-title" class="mt-4 text-4xl font-black lg:text-5xl">Loading project</h1>
+                    <p id="project-description" class="mt-4 max-w-3xl text-base leading-8 text-base-content/70"></p>
+                    <div id="project-meta" class="mt-5 flex flex-wrap gap-2"></div>
+                    <div id="project-links" class="mt-6 flex flex-wrap gap-3"></div>
+                </div>
+
+                <div id="project-state" class="alert alert-info mb-8">
+                    <span>Loading README from GitHub...</span>
+                </div>
+
+                <article id="readme" class="markdown-body hidden max-w-none bg-transparent text-base-content p-6"></article>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        AOS.init({ once: true });
+
+        const themeSelect = document.getElementById('theme-select');
+        const root = document.documentElement;
+        const savedTheme = localStorage.getItem('theme-data') || 'light';
+
+        root.setAttribute('data-theme', savedTheme);
+        themeSelect.value = savedTheme;
+
+        themeSelect.addEventListener('change', (event) => {
+            const theme = event.target.value;
+
+            root.setAttribute('data-theme', theme);
+            localStorage.setItem('theme-data', theme);
+        });
+
+        const params = new URLSearchParams(window.location.search);
+        const repo = params.get('repo');
+        const titleElement = document.getElementById('project-title');
+        const descriptionElement = document.getElementById('project-description');
+        const metaElement = document.getElementById('project-meta');
+        const linksElement = document.getElementById('project-links');
+        const stateElement = document.getElementById('project-state');
+        const readmeElement = document.getElementById('readme');
+
+        function titleize(text) {
+            return text
+                .replace(/[-_]+/g, ' ')
+                .replace(/\b\w/g, (character) => character.toUpperCase());
+        }
+
+        function decodeBase64Utf8(value) {
+            const binary = atob(value.replace(/\s/g, ''));
+            const bytes = Uint8Array.from(binary, (character) => character.charCodeAt(0));
+
+            return new TextDecoder().decode(bytes);
+        }
+
+        function toRepoUrl(target, repoSlug, branch, isImage = false) {
+            if (!target || /^([a-z]+:)?\/\//i.test(target) || target.startsWith('#') || target.startsWith('mailto:') || target.startsWith('tel:')) {
+                return target;
+            }
+
+            const basePath = isImage
+                ? `https://raw.githubusercontent.com/${repoSlug}/${branch}/`
+                : `https://github.com/${repoSlug}/blob/${branch}/`;
+
+            return new URL(target, basePath).href;
+        }
+
+        async function loadProjectReadme(repoSlug) {
+            if (!repoSlug) {
+                stateElement.className = 'alert alert-error mb-8';
+                stateElement.textContent = 'Missing repo parameter. Open a project card from the projects page.';
+                titleElement.textContent = 'No project selected';
+                return;
+            }
+
+            try {
+                const repoResponse = await fetch(`https://api.github.com/repos/${repoSlug}`);
+
+                if (!repoResponse.ok) {
+                    throw new Error('Repository metadata request failed.');
+                }
+
+                const repoData = await repoResponse.json();
+                const branch = repoData.default_branch || 'main';
+                const readmeResponse = await fetch(`https://api.github.com/repos/${repoSlug}/readme`);
+
+                if (!readmeResponse.ok) {
+                    throw new Error('README request failed.');
+                }
+
+                const readmeData = await readmeResponse.json();
+                const markdown = decodeBase64Utf8(readmeData.content);
+                const rendered = marked.parse(markdown);
+
+                titleElement.textContent = repoData.name ? titleize(repoData.name) : titleize(repoSlug.split('/').at(-1));
+                descriptionElement.textContent = repoData.description || 'Repository README rendered from GitHub.';
+                metaElement.innerHTML = '';
+                linksElement.innerHTML = '';
+
+                const badges = [
+                    repoData.language,
+                    branch,
+                    // repoData.stargazers_count != null ? `${repoData.stargazers_count} stars` : null,
+                    // repoData.forks_count != null ? `${repoData.forks_count} forks` : null,
+                ].filter(Boolean);
+
+                badges.forEach((badge) => {
+                    const element = document.createElement('span');
+                    element.className = 'badge badge-outline';
+                    element.textContent = badge;
+                    metaElement.appendChild(element);
+                });
+
+                const repoButton = document.createElement('a');
+                repoButton.className = 'btn btn-sm btn-info';
+                repoButton.href = repoData.html_url;
+                repoButton.target = '_blank';
+                repoButton.rel = 'noreferrer';
+                repoButton.textContent = 'Open on GitHub';
+                linksElement.appendChild(repoButton);
+
+                if (repoData.homepage) {
+                    const siteButton = document.createElement('a');
+                    siteButton.className = 'btn btn-sm btn-outline';
+                    siteButton.href = repoData.homepage;
+                    siteButton.target = '_blank';
+                    siteButton.rel = 'noreferrer';
+                    siteButton.textContent = 'Live Site';
+                    linksElement.appendChild(siteButton);
+                }
+
+                readmeElement.innerHTML = rendered;
+
+                readmeElement.querySelectorAll('a').forEach((link) => {
+                    const originalHref = link.getAttribute('href') || '';
+
+                    link.href = toRepoUrl(originalHref, repoSlug, branch);
+
+                    if (!originalHref.startsWith('#') && !originalHref.startsWith('mailto:') && !originalHref.startsWith('tel:') && link.href.startsWith('http')) {
+                        link.target = '_blank';
+                        link.rel = 'noreferrer';
+                    }
+                });
+
+                readmeElement.querySelectorAll('img').forEach((image) => {
+                    image.src = toRepoUrl(image.getAttribute('src'), repoSlug, branch, true);
+                });
+
+                stateElement.className = 'hidden';
+                readmeElement.classList.remove('hidden');
+            } catch (error) {
+                stateElement.className = 'alert alert-error mb-8';
+                stateElement.textContent = 'Unable to load the README right now. You can still open the repository on GitHub.';
+                titleElement.textContent = titleize(repoSlug.split('/').at(-1));
+                descriptionElement.textContent = 'GitHub data could not be loaded for this project.';
+                metaElement.innerHTML = '';
+
+                const repoButton = document.createElement('a');
+                repoButton.className = 'btn btn-sm btn-info';
+                repoButton.href = `https://github.com/${repoSlug}`;
+                repoButton.target = '_blank';
+                repoButton.rel = 'noreferrer';
+                repoButton.textContent = 'Open on GitHub';
+                linksElement.appendChild(repoButton);
+            }
+        }
+
+        loadProjectReadme(repo);
+    </script>
+</body>
+
+</html>

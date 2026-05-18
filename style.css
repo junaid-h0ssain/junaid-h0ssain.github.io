@@ -65,3 +65,21 @@ html {
     .about-card {
         backdrop-filter: blur(10px);
     }
+
+        .project-card {
+            cursor: pointer;
+            transition:
+                transform 180ms ease,
+                box-shadow 180ms ease,
+                border-color 180ms ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 1.5rem 3rem color-mix(in oklch, hsl(var(--p)) 12%, transparent);
+        }
+
+        .project-card:focus-visible {
+            outline: 3px solid hsl(var(--p));
+            outline-offset: 4px;
+        }
