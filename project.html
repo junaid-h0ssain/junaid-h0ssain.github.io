@@ -33,10 +33,49 @@
 <body>
     <div class="navbar bg-base-100 shadow-sm site-navbar">
         <div class="navbar-start">
-            <a class="btn btn-ghost text-xl" href="./projects.html">Projects</a>
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h8m-8 6h16" />
+                    </svg>
+                </div>
+                <ul tabindex="-1"
+                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./resume.html">Resume</a></li>
+                    <li>
+                        <details>
+                            <summary>Contact</summary>
+                            <ul class="p-2">
+                                <li><a href="mailto:junaid0182@outlook.com">Mail</a></li>
+                                <li><a href="https://github.com/junaid-h0ssain">GitHub</a></li>
+                                <li><a href="https://www.linkedin.com/in/junaid-h0ssain">LinkedIn</a></li>
+                                <li><a href="https://www.instagram.com/junaid.h0ssain/">Instagram</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </div>
+            <a class="btn btn-ghost text-xl" href="./index.html">Junaid Hossain</a>
         </div>
         <div class="navbar-center hidden lg:flex">
-            <span class="text-sm text-base-content/60">GitHub README viewer</span>
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./resume.html">Resume</a></li>
+                <li>
+                    <details>
+                        <summary>Contact</summary>
+                        <ul class="p-2 bg-base-100 w-40 z-1">
+                            <li><a href="mailto:junaid0182@outlook.com">Mail</a></li>
+                            <li><a href="https://github.com/junaid-h0ssain">GitHub</a></li>
+                            <li><a href="https://www.linkedin.com/in/junaid-h0ssain">LinkedIn</a></li>
+                            <li><a href="https://www.instagram.com/junaid.h0ssain/">Instagram</a></li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
         </div>
         <div class="navbar-end">
             <fieldset class="fieldset">
@@ -190,8 +229,8 @@
                 const badges = [
                     repoData.language,
                     branch,
-                    repoData.stargazers_count != null ? `${repoData.stargazers_count} stars` : null,
-                    repoData.forks_count != null ? `${repoData.forks_count} forks` : null,
+                    // repoData.stargazers_count != null ? `${repoData.stargazers_count} stars` : null,
+                    // repoData.forks_count != null ? `${repoData.forks_count} forks` : null,
                 ].filter(Boolean);
 
                 badges.forEach((badge) => {
