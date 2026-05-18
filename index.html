@@ -7,6 +7,17 @@
   <meta name="description"
     content="Welcome to Junaid Hossain's portfolio, a backend developer building reliable software experiences." />
   <meta name="theme-color" content="#17352b" />
+    <script>
+      try {
+        const savedTheme = localStorage.getItem('theme-data');
+
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+      } catch (error) {
+        // Ignore storage access issues and fall back to the default theme.
+      }
+    </script>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -285,7 +296,8 @@
       <span class="badge badge-outline badge-lg px-4 py-4 text-sm uppercase tracking-[0.3em]">Projects</span>
     </div>
     <div class="mx-auto grid max-w-7xl gap-6 md:grid-cols-2 xl:grid-cols-3">
-      <div data-aos="flip-right" data-aos-delay="100" data-aos-duration="2000" class="card bg-base-100 w-full shadow-sm">
+      <div data-aos="flip-right" data-aos-delay="100" data-aos-duration="2000"
+        class="card bg-base-100 w-full shadow-sm">
         <figure>
           <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes" />
         </figure>
@@ -344,7 +356,7 @@
           </div>
         </div>
       </div>
-      
+
     </div>
   </section>
 
@@ -395,12 +407,22 @@
   </footer>
 
   <script>
+    // animation 
     AOS.init();
+
+    // theme selector
     const themeSelect = document.getElementById('theme-select');
     const root = document.documentElement;
+      const savedTheme = localStorage.getItem('theme-data') || 'light';
+
+      root.setAttribute('data-theme', savedTheme);
+      themeSelect.value = savedTheme;
 
     themeSelect.addEventListener('change', (event) => {
-      root.setAttribute('data-theme', event.target.value);
+        const theme = event.target.value;
+
+        root.setAttribute('data-theme', theme);
+        localStorage.setItem('theme-data', theme);
     });
   </script>
 
