@@ -134,6 +134,7 @@
 
         <section class="p-10 pt-0">
             <div class="mx-auto grid max-w-7xl gap-6 md:grid-cols-2 xl:grid-cols-3">
+
                 <div data-aos="fade-down-right" data-aos-delay="100" data-aos-duration="2000"
                     class="card bg-base-100 w-full shadow-sm">
                     <figure>
@@ -458,6 +459,32 @@
                         </div>
                     </div>
                 </div>
+
+                <div data-aos="flip-up" data-aos-delay="100" data-aos-duration="2000"
+                    class="card bg-base-100 w-full shadow-sm">
+                    <figure>
+                        <img src="./pic/portfolio-v1.webp" alt="Portfolio V1" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            portfolio-v1
+                            <div class="badge badge-secondary">Astro</div>
+                        </h2>
+                        <p>A personal portfolio website built with Astro, React, MDX, and Tailwind CSS, featuring
+                            project, blog, and resume pages.</p>
+                        <div class="card-actions justify-end">
+                            <div class="badge badge-outline">Astro</div>
+                            <div class="badge badge-outline">React</div>
+                            <div class="badge badge-outline">MDX</div>
+                        </div>
+                        <div class="card-actions justify-end">
+                            <a class="btn btn-sm btn-outline" href="https://portfolio-v1.junadhon81.workers.dev/"
+                                target="_blank" rel="noreferrer">Live Site</a>
+                            <a class="btn btn-sm btn-info" href="https://github.com/junaid-h0ssain/portfolio-v1"
+                                target="_blank" rel="noreferrer">Repo</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -511,7 +538,7 @@
     </footer>
 
     <script>
-        AOS.init({ once : true });
+        AOS.init({ once: true });
 
         const themeSelect = document.getElementById('theme-select');
         const root = document.documentElement;
