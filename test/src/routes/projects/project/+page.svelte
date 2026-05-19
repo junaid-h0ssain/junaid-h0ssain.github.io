@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { page } from '$app/state';
 	import ProjectReadme from '$lib/components/ProjectReadme.svelte';
+
+	let repoSlug = $state<string | null>(null);
 
 	onMount(() => {
 		const aos = globalThis as typeof globalThis & { AOS?: { init: (options?: { once?: boolean }) => void } };
 		aos.AOS?.init({ once: true });
+		repoSlug = new URL(globalThis.location.href).searchParams.get('repo');
 	});
-
-	const repoSlug = $derived(page.url.searchParams.get('repo'));
 </script>
 
 <svelte:head>
