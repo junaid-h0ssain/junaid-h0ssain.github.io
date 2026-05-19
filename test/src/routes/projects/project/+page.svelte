@@ -2,12 +2,12 @@
 	import { onMount } from 'svelte';
 	import ProjectReadme from '$lib/components/ProjectReadme.svelte';
 
-	let repoSlug = $state<string | null>(null);
+	const initialRepoSlug = typeof window !== 'undefined' ? new URL(window.location.href).searchParams.get('repo') : null;
+	let repoSlug = $state<string | null>(initialRepoSlug);
 
 	onMount(() => {
 		const aos = globalThis as typeof globalThis & { AOS?: { init: (options?: { once?: boolean }) => void } };
 		aos.AOS?.init({ once: true });
-		repoSlug = new URL(globalThis.location.href).searchParams.get('repo');
 	});
 </script>
 
