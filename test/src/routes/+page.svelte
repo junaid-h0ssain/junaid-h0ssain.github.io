@@ -45,11 +45,9 @@
 	image={heroImage}
 	title="Junaid Hossain"
 	subtitle="Software Engineer"
-	description="Building reliable software experiences with a focus on backend systems, clean interfaces, and practical delivery."
+	description="Building amazing software experiences"
 	primaryHref="/resume"
 	primaryLabel="View Resume"
-	secondaryHref="/projects"
-	secondaryLabel="Explore Projects"
 />
 
 <AboutSection />

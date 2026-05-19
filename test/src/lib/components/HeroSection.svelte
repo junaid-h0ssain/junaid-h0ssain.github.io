@@ -10,8 +10,7 @@
 		description: string;
 		primaryHref: AppRoute;
 		primaryLabel: string;
-		secondaryHref: AppRoute;
-		secondaryLabel: string;
+
 	}
 
 	let {
@@ -21,8 +20,6 @@
 		description,
 		primaryHref,
 		primaryLabel,
-		secondaryHref,
-		secondaryLabel
 	}: Props = $props();
 </script>
 
@@ -43,7 +40,6 @@
 			<p class="mx-auto mb-8 max-w-2xl text-base leading-8 text-white/85 sm:text-lg">{description}</p>
 			<div class="flex flex-wrap justify-center gap-3">
 				<a href={resolve(primaryHref)} class="btn btn-primary">{primaryLabel}</a>
-				<a href={resolve(secondaryHref)} class="btn btn-outline btn-secondary text-white hover:text-base-content">{secondaryLabel}</a>
 			</div>
 		</div>
 	</div>
