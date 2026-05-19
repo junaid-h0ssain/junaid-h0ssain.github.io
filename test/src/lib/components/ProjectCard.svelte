@@ -1,3 +1,4 @@
+/* eslint-disable svelte/no-navigation-without-resolve */
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import type { ProjectItem } from '$lib/data/projects';
