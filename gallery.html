@@ -90,10 +90,6 @@
         <p class="mt-4">Travel, builds, and everyday moments. Filter by tag, click any photo to view it large.</p>
       </div>
       <div class="mt-6 flex flex-wrap items-center gap-2" id="filters" role="group" aria-label="Filter photos">
-        <button class="btn btn-sm btn-outline filter-btn" data-filter="all" aria-pressed="true">All</button>
-        <button class="btn btn-sm btn-outline filter-btn" data-filter="builds" aria-pressed="false">Builds</button>
-        <button class="btn btn-sm btn-outline filter-btn" data-filter="travel" aria-pressed="false">Travel</button>
-        <button class="btn btn-sm btn-outline filter-btn" data-filter="everyday" aria-pressed="false">Everyday</button>
       </div>
       <div class="rule my-8"></div>
       <div class="gallery-masonry" id="gallery-grid" aria-live="polite"></div>
@@ -201,10 +197,15 @@
       if (e.key === 'ArrowLeft') document.getElementById('lightbox-prev').click();
       if (e.key === 'ArrowRight') document.getElementById('lightbox-next').click();
     });
-    document.querySelectorAll('.filter-btn').forEach(b => b.addEventListener('click', () => render(b.dataset.filter)));
+    function renderFilters(items) {
+      const filters = document.getElementById('filters');
+      const tags = ['all', ...new Set(items.map((item) => item.tag).filter(Boolean))];
+      filters.innerHTML = tags.map((tag) => `<button class="btn btn-sm btn-outline filter-btn" data-filter="${tag}" aria-pressed="${tag === 'all'}">${tag[0].toUpperCase()}${tag.slice(1)}</button>`).join('');
+      filters.querySelectorAll('.filter-btn').forEach((button) => button.addEventListener('click', () => render(button.dataset.filter)));
+    }
     fetch('./gallery.json')
       .then((response) => response.ok ? response.json() : Promise.reject(new Error('Could not load gallery.json')))
-      .then((items) => { GALLERY_ITEMS.push(...items); render('all'); })
+      .then((items) => { GALLERY_ITEMS.push(...items); renderFilters(GALLERY_ITEMS); render('all'); })
       .catch((error) => { console.error(error); render('all'); });
   </script>
 </body>
