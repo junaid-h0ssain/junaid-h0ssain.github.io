@@ -209,13 +209,18 @@
                 const repoData = await repoResponse.json();
                 const branch = repoData.default_branch || 'main';
                 const readmeResponse = await fetch(`https://api.github.com/repos/${repoSlug}/readme`);
+                let markdown;
 
-                if (!readmeResponse.ok) {
-                    throw new Error('README request failed.');
+                if (readmeResponse.ok) {
+                    const readmeData = await readmeResponse.json();
+                    markdown = decodeBase64Utf8(readmeData.content);
+                } else {
+                    const rawResponse = await fetch(`https://raw.githubusercontent.com/${repoSlug}/${branch}/README.md`);
+                    if (!rawResponse.ok) throw new Error('README request failed.');
+                    markdown = await rawResponse.text();
                 }
 
-                const readmeData = await readmeResponse.json();
-                const markdown = decodeBase64Utf8(readmeData.content);
+                if (!window.marked) throw new Error('Markdown renderer unavailable.');
                 const rendered = marked.parse(markdown);
 
                 titleElement.textContent = repoData.name ? titleize(repoData.name) : titleize(repoSlug.split('/').at(-1));
