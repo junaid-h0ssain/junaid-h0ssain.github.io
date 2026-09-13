@@ -543,7 +543,7 @@
         document.querySelectorAll('[data-project-repo]').forEach((card) => {
             const openProject = () => {
                 const repo = card.dataset.projectRepo;
-                window.location.href = `https://github.com/${repo}`;
+                window.open(`https://github.com/${repo}`, '_blank', 'noopener,noreferrer');
             };
 
             card.addEventListener('click', (event) => {
