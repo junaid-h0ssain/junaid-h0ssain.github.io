@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": { "gallery:sync": "node scripts/sync-gallery.mjs" },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "uploadthing": "^7.7.4"
+  }
+}

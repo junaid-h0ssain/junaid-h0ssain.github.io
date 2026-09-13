@@ -2,3 +2,8 @@
 test/
 .agents/
 skills-lock.json
+.env
+.env.*
+!.env.example
+gallery-upload/
+node_modules/
