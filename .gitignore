@@ -1,2 +1,4 @@
 # for svello branch
 test/
+.agents/
+skills-lock.json

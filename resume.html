@@ -13,11 +13,11 @@
   <meta property="og:title" content="Junaid Hossain - Resume" />
   <meta property="og:description" content="Resume of Junaid Hossain presented as readable HTML content." />
   <meta property="og:url" content="https://junaid-h0ssain.github.io/resume.html" />
-  <meta property="og:image" content="https://junaid-h0ssain.github.io/pic/android-chrome-192x192.png" />
+  <meta property="og:image" content="https://pfbduat8lp.ufs.sh/f/liP0ABz9f3F11aYxyp1h6iUolbTfexEVkN0M7vju4XWSIL5t" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Junaid Hossain - Resume" />
   <meta name="twitter:description" content="Resume of Junaid Hossain presented as readable HTML content." />
-  <meta name="twitter:image" content="https://junaid-h0ssain.github.io/pic/android-chrome-192x192.png" />
+  <meta name="twitter:image" content="https://pfbduat8lp.ufs.sh/f/liP0ABz9f3F11aYxyp1h6iUolbTfexEVkN0M7vju4XWSIL5t" />
   <meta name="theme-color" content="#17352b" />
   <script>
     try {
@@ -30,7 +30,7 @@
       // Ignore storage access issues and fall back to the default theme.
     }
   </script>
-  <link rel="icon" type="image/svg+xml" href="./pic/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" href="https://pfbduat8lp.ufs.sh/f/liP0ABz9f3F11aYxyp1h6iUolbTfexEVkN0M7vju4XWSIL5t" />
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
@@ -42,10 +42,11 @@
 </head>
 
 <body>
+  <!-- navbar  -->
   <div class="navbar bg-base-100 shadow-sm pl-5 pr-5 site-navbar">
     <div class="navbar-start">
       <div class="dropdown">
-        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden" aria-label="Open menu">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
           </svg>
@@ -53,6 +54,8 @@
         <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
           <li><a href="./index.html">Home</a></li>
           <li><a href="./projects.html">Projects</a></li>
+          <li><a href="./gallery.html">Gallery</a></li>
+          <li><a href="./resume.html">Resume</a></li>
           <li>
             <details>
               <summary>Contact</summary>
@@ -66,12 +69,17 @@
           </li>
         </ul>
       </div>
-      <a class="btn btn-ghost text-xl" href="./index.html">Junaid Hossain</a>
+      <a class="flex items-center gap-3" href="./index.html" aria-label="Junaid Hossain home">
+        <span class="brand-mark" aria-hidden="true">J</span>
+        <span class="btn btn-ghost text-xl !rounded-full px-2">Junaid Hossain</span>
+      </a>
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./projects.html">Projects</a></li>
+        <li><a class="nav-link" href="./index.html">Home</a></li>
+        <li><a class="nav-link" href="./projects.html">Projects</a></li>
+        <li><a class="nav-link" href="./gallery.html">Gallery</a></li>
+        <li><a class="nav-link" href="./resume.html" aria-current="page">Resume</a></li>
         <li>
           <details>
             <summary>Contact</summary>
@@ -86,47 +94,22 @@
       </ul>
     </div>
     <div class="navbar-end">
-      <fieldset class="fieldset">
-        <legend class="fieldset-legend">Theme</legend>
-        <select id="theme-select" class="select" aria-label="Theme selector">
-          <option value="light" selected>Light</option>
-          <option value="dark">Dark</option>
-          <option value="cupcake">Cupcake</option>
-          <option value="bumblebee">Bumblebee</option>
-          <option value="emerald">Emerald</option>
-          <option value="corporate">Corporate</option>
-          <option value="synthwave">Synthwave</option>
-          <option value="retro">Retro</option>
-          <option value="cyberpunk">Cyberpunk</option>
-          <option value="valentine">Valentine</option>
-          <option value="halloween">Halloween</option>
-          <option value="garden">Garden</option>
-          <option value="forest">Forest</option>
-          <option value="aqua">Aqua</option>
-          <option value="lofi">Lofi</option>
-          <option value="pastel">Pastel</option>
-          <option value="fantasy">Fantasy</option>
-          <option value="wireframe">Wireframe</option>
-          <option value="black">Black</option>
-          <option value="luxury">Luxury</option>
-          <option value="dracula">Dracula</option>
-          <option value="cmyk">CMYK</option>
-          <option value="autumn">Autumn</option>
-          <option value="business">Business</option>
-          <option value="acid">Acid</option>
-          <option value="lemonade">Lemonade</option>
-          <option value="night">Night</option>
-          <option value="coffee">Coffee</option>
-          <option value="winter">Winter</option>
-          <option value="dim">Dim</option>
-          <option value="nord">Nord</option>
-          <option value="sunset">Sunset</option>
-          <option value="caramellatte">Caramellatte</option>
-          <option value="abyss">Abyss</option>
-          <option value="silk">Silk</option>
-        </select>
-        <span class="label">Have Fun</span>
-      </fieldset>
+      <label class="swap swap-rotate" aria-label="Toggle theme">
+        <!-- this hidden checkbox controls the state -->
+        <input type="checkbox" class="theme-checkbox" />
+
+        <!-- sun icon -->
+        <svg class="swap-off h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+        </svg>
+
+        <!-- moon icon -->
+        <svg class="swap-on h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+        </svg>
+      </label>
     </div>
   </div>
 
@@ -141,8 +124,8 @@
       </div>
 
       <div class="mb-6 flex flex-wrap justify-center gap-3">
-        <a class="btn btn-primary" href="./pic/My_Resume.pdf" target="_blank" rel="noreferrer">Open PDF</a>
-        <a class="btn btn-outline" href="./pic/My_Resume.pdf" download>Download Resume</a>
+        <a class="btn btn-primary" href="https://pfbduat8lp.ufs.sh/f/liP0ABz9f3F15l85V4RU8Zi2IWQSOtCjKn6FDAuM4yLxlJEe" target="_blank" rel="noreferrer">Open PDF</a>
+        <a class="btn btn-outline" href="https://pfbduat8lp.ufs.sh/f/liP0ABz9f3F15l85V4RU8Zi2IWQSOtCjKn6FDAuM4yLxlJEe" download>Download Resume</a>
       </div>
 
       <div class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
@@ -196,7 +179,7 @@
                 </div>
                 <p class="mt-1 font-medium text-base-content/80">East Delta University</p>
                 <ul class="mt-3 list-disc space-y-2 pl-5 text-base-content/80">
-                  <li>GPA: 3.72/4.00</li>
+                  <li>GPA: 3.73/4.00</li>
                   <li>Dean's List all semesters but the first two</li>
                   <li>Chairman's list for academic excellence</li>
                 </ul>
@@ -350,19 +333,21 @@
   <script>
     AOS.init({ once: true });
 
-    const themeSelect = document.getElementById('theme-select');
+    const THEME_LIGHT = 'light';
+    const THEME_DARK = 'halloween';
+    const themeCheckbox = document.querySelector('.theme-checkbox');
     const root = document.documentElement;
-    const savedTheme = localStorage.getItem('theme-data') || 'light';
-
+    let savedTheme = THEME_LIGHT;
+    try { savedTheme = localStorage.getItem('theme-data') || THEME_LIGHT; } catch (e) {}
     root.setAttribute('data-theme', savedTheme);
-    themeSelect.value = savedTheme;
-
-    themeSelect.addEventListener('change', (event) => {
-      const theme = event.target.value;
-
-      root.setAttribute('data-theme', theme);
-      localStorage.setItem('theme-data', theme);
-    });
+    if (themeCheckbox) {
+      themeCheckbox.checked = savedTheme === THEME_DARK;
+      themeCheckbox.addEventListener('change', () => {
+        const theme = themeCheckbox.checked ? THEME_DARK : THEME_LIGHT;
+        root.setAttribute('data-theme', theme);
+        try { localStorage.setItem('theme-data', theme); } catch (e) {}
+      });
+    }
   </script>
 </body>
 
