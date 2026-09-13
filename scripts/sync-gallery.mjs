@@ -31,7 +31,7 @@ for (const name of pending) {
   const file = new File([await readFile(join(uploadDir, name))], name, { type: mimeType(name) });
   const result = await utapi.uploadFiles(file);
   if (result.error || !result.data) throw new Error(`${name}: ${result.error?.message ?? 'upload failed'}`);
-  manifest.push({ src: result.data.url, title: titleFrom(name), tag, sourceName: name });
+  manifest.push({ src: result.data.ufsUrl, title: titleFrom(name), tag, sourceName: name });
   console.log(`Uploaded ${name}`);
 }
 
