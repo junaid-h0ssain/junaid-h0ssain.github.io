@@ -253,3 +253,54 @@ footer.footer a:hover { color: var(--portfolio-accent); }
   .hero-title { max-width: 12ch; }
   .hero-figure::after { inset: 8px -8px -8px 8px; }
 }
+
+@media (max-width: 639px) {
+  .gallery-masonry {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(82vw, 1fr);
+    grid-template-rows: auto;
+    gap: 0.9rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding: 0.35rem 1.25rem 1.25rem 0.1rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--portfolio-accent) transparent;
+  }
+  .gallery-masonry::after {
+    content: "Swipe to explore";
+    position: sticky;
+    right: 0;
+    align-self: center;
+    width: 0;
+    overflow: visible;
+    white-space: nowrap;
+    color: var(--portfolio-muted);
+    font: 0.7rem var(--font-mono);
+    transform: translateX(-5.5rem) rotate(-90deg);
+    pointer-events: none;
+  }
+  .gallery-masonry .g-item {
+    width: 100%;
+    margin: 0;
+    scroll-snap-align: start;
+  }
+  .gallery-masonry .g-item img {
+    height: 54vh;
+    min-height: 18rem;
+    object-fit: cover;
+  }
+  .gallery-masonry .g-item figcaption {
+    min-height: 3.5rem;
+    align-items: center;
+  }
+  #filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.35rem;
+    scrollbar-width: none;
+  }
+  #filters::-webkit-scrollbar { display: none; }
+  #filters .filter-btn { flex: none; }
+}
