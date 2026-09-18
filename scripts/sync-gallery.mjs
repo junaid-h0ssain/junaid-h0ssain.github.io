@@ -29,7 +29,7 @@ if (!pending.length) {
 const utapi = new UTApi({ token: process.env.UPLOADTHING_TOKEN });
 for (const name of pending) {
   const file = new File([await readFile(join(uploadDir, name))], name, { type: mimeType(name) });
-  const result = await utapi.uploadFiles(file);
+  const result = await withMutedUploadthingWarnings(() => utapi.uploadFiles(file));
   if (result.error || !result.data) throw new Error(`${name}: ${result.error?.message ?? 'upload failed'}`);
   manifest.push({ src: result.data.ufsUrl, title: titleFrom(name), tag, sourceName: name });
   console.log(`Uploaded ${name}`);
@@ -40,6 +40,22 @@ console.log(`Updated gallery.json with ${pending.length} image${pending.length =
 
 function titleFrom(name) {
   return basename(name, extname(name)).replace(/[-_]+/g, ' ').replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+// uploadthing v7 logs `file.url`/`file.appUrl` deprecation warnings from inside
+// its own `uploadFiles` implementation on every upload. We only read `ufsUrl`
+// (the replacement field), so mute just those lines for the duration of the call.
+async function withMutedUploadthingWarnings(fn) {
+  const originalWarn = console.warn;
+  console.warn = (...args) => {
+    if (typeof args[0] === 'string' && args[0].startsWith('⚠️ [uploadthing][deprecated]')) return;
+    originalWarn(...args);
+  };
+  try {
+    return await fn();
+  } finally {
+    console.warn = originalWarn;
+  }
 }
 
 function mimeType(name) {
