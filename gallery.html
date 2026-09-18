@@ -94,9 +94,6 @@
       <div class="rule my-8"></div>
       <div class="gallery-masonry" id="gallery-grid" aria-live="polite"></div>
       <p id="gallery-empty" class="hidden mt-6 opacity-70">No photos yet.</p>
-      <div class="mt-8 text-center">
-        <button id="load-more" class="btn btn-outline hidden">Load more</button>
-      </div>
     </div>
   </main>
 
@@ -156,49 +153,30 @@
 
     const grid = document.getElementById('gallery-grid');
     const emptyMsg = document.getElementById('gallery-empty');
-    const loadMoreBtn = document.getElementById('load-more');
     const dlg = document.getElementById('lightbox');
     const dlgImg = document.getElementById('lightbox-img');
     const dlgCap = document.getElementById('lightbox-cap');
-    const PAGE_SIZE = 12;
-    let visible = [], shownCount = 0, idx = 0;
-
-    function cardFor(g, i) {
-      const fig = document.createElement('figure');
-      fig.className = 'g-item';
-      fig.setAttribute('data-aos', 'fade-up');
-      fig.innerHTML = `<img src="${g.src}" alt="${g.title}" loading="lazy" /><figcaption><span>${g.title}</span></figcaption>`;
-      fig.tabIndex = 0;
-      fig.setAttribute('role', 'button');
-      fig.setAttribute('aria-label', `Open photo: ${g.title}`);
-      const open = () => openLightbox(i);
-      fig.addEventListener('click', open);
-      fig.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
-      return fig;
-    }
-
-    function updateLoadMore() {
-      loadMoreBtn.classList.toggle('hidden', shownCount >= visible.length);
-    }
-
-    function appendBatch() {
-      visible.slice(shownCount, shownCount + PAGE_SIZE).forEach((g, offset) => {
-        grid.appendChild(cardFor(g, shownCount + offset));
-      });
-      shownCount = grid.children.length;
-      updateLoadMore();
-      if (window.AOS) AOS.refresh();
-    }
+    let visible = [], idx = 0;
 
     function render() {
       visible = [...GALLERY_ITEMS];
       grid.innerHTML = '';
-      shownCount = 0;
       emptyMsg.classList.toggle('hidden', visible.length > 0);
-      appendBatch();
+      visible.forEach((g, i) => {
+        const fig = document.createElement('figure');
+        fig.className = 'g-item';
+        fig.setAttribute('data-aos', 'fade-up');
+        fig.innerHTML = `<img src="${g.src}" alt="${g.title}" loading="lazy" /><figcaption><span>${g.title}</span></figcaption>`;
+        fig.tabIndex = 0;
+        fig.setAttribute('role', 'button');
+        fig.setAttribute('aria-label', `Open photo: ${g.title}`);
+        const open = () => openLightbox(i);
+        fig.addEventListener('click', open);
+        fig.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+        grid.appendChild(fig);
+      });
+      if (window.AOS) AOS.refresh();
     }
-
-    loadMoreBtn.addEventListener('click', appendBatch);
 
     function openLightbox(i) {
       idx = i; updateLightbox();
