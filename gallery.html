@@ -91,11 +91,9 @@
         <h1 class="font-display mt-3" style="font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-0.04em;line-height:1">Photos and Memories</h1>
         <p class="mt-4">Travel, builds, and everyday moments...</p>
       </div>
-      <div class="mt-6 flex flex-wrap items-center gap-2" id="filters" role="group" aria-label="Filter photos">
-      </div>
       <div class="rule my-8"></div>
       <div class="gallery-masonry" id="gallery-grid" aria-live="polite"></div>
-      <p id="gallery-empty" class="hidden mt-6 opacity-70">No photos in this tag yet.</p>
+      <p id="gallery-empty" class="hidden mt-6 opacity-70">No photos yet.</p>
       <div class="mt-8 text-center">
         <button id="load-more" class="btn btn-outline hidden">Load more</button>
       </div>
@@ -163,13 +161,13 @@
     const dlgImg = document.getElementById('lightbox-img');
     const dlgCap = document.getElementById('lightbox-cap');
     const PAGE_SIZE = 12;
-    let visible = [], shownCount = 0, idx = 0, activeFilter = 'all';
+    let visible = [], shownCount = 0, idx = 0;
 
     function cardFor(g, i) {
       const fig = document.createElement('figure');
       fig.className = 'g-item';
       fig.setAttribute('data-aos', 'fade-up');
-      fig.innerHTML = `<img src="${g.src}" alt="${g.title}" loading="lazy" /><figcaption><span>${g.title}</span><span>${g.tag}</span></figcaption>`;
+      fig.innerHTML = `<img src="${g.src}" alt="${g.title}" loading="lazy" /><figcaption><span>${g.title}</span></figcaption>`;
       fig.tabIndex = 0;
       fig.setAttribute('role', 'button');
       fig.setAttribute('aria-label', `Open photo: ${g.title}`);
@@ -192,14 +190,12 @@
       if (window.AOS) AOS.refresh();
     }
 
-    function render(filter = 'all') {
-      activeFilter = filter;
-      visible = GALLERY_ITEMS.filter(g => filter === 'all' || g.tag === filter);
+    function render() {
+      visible = [...GALLERY_ITEMS];
       grid.innerHTML = '';
       shownCount = 0;
       emptyMsg.classList.toggle('hidden', visible.length > 0);
       appendBatch();
-      document.querySelectorAll('.filter-btn').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.filter === filter)));
     }
 
     loadMoreBtn.addEventListener('click', appendBatch);
@@ -222,16 +218,10 @@
       if (e.key === 'ArrowLeft') document.getElementById('lightbox-prev').click();
       if (e.key === 'ArrowRight') document.getElementById('lightbox-next').click();
     });
-    function renderFilters(items) {
-      const filters = document.getElementById('filters');
-      const tags = ['all', ...new Set(items.map((item) => item.tag).filter(Boolean))];
-      filters.innerHTML = tags.map((tag) => `<button class="btn btn-sm btn-outline filter-btn" data-filter="${tag}" aria-pressed="${tag === 'all'}">${tag[0].toUpperCase()}${tag.slice(1)}</button>`).join('');
-      filters.querySelectorAll('.filter-btn').forEach((button) => button.addEventListener('click', () => render(button.dataset.filter)));
-    }
     fetch('./gallery.json')
       .then((response) => response.ok ? response.json() : Promise.reject(new Error('Could not load gallery.json')))
-      .then((items) => { GALLERY_ITEMS.push(...shuffle(items)); renderFilters(GALLERY_ITEMS); render('all'); })
-      .catch((error) => { console.error(error); render('all'); });
+      .then((items) => { GALLERY_ITEMS.push(...shuffle(items)); render(); })
+      .catch((error) => { console.error(error); render(); });
   </script>
 </body>
 </html>
