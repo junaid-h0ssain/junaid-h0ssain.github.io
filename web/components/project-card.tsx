@@ -27,12 +27,6 @@ export function ProjectCard({ project }: { project: Project }) {
         }
       }}
     >
-      {project.image && (
-        <figure>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={project.image} alt={project.imageAlt ?? project.title} />
-        </figure>
-      )}
       <div className="card-body">
         <h2 className="card-title">
           {project.title}
