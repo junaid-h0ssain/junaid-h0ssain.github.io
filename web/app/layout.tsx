@@ -25,7 +25,9 @@ export const metadata: Metadata = {
   description:
     "Welcome to Junaid Hossain's portfolio, i am a dude with an chill attitude.",
   authors: [{ name: "Junaid Hossain" }],
-  openGraph: {
+  icons: {
+    icon: "/icon.png",
+  },  openGraph: {
     type: "website",
     siteName: "Junaid Hossain",
     title: "Junaid Hossain - Portfolio",
