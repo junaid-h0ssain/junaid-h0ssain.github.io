@@ -291,9 +291,9 @@ export const PROJECTS: Project[] = [
   {
     repo: "junaid-h0ssain/system-info",
     title: "system-info",
-    badge: "GO",
+    badge: "Go",
     description: "A lightweight hardware info checker.",
-    tags: ["GO", "GO-PSUTIL"],
+    tags: ["Go", "GO-PSUTIL"],
   },
   {
     repo: "junaid-h0ssain/cctv_web",
@@ -301,5 +301,12 @@ export const PROJECTS: Project[] = [
     badge: "Go",
     description: "A CCTV web app.",
     tags: ["Go"],
+  },
+  {
+    repo: "junaid-h0ssain/flutter_starter_projects",
+    title: "flutter_starter_projects",
+    badge: "Dart/Flutter",
+    description: "Starter projects for learning Flutter.",
+    tags: ["Flutter", "Dart"],
   },
 ]
