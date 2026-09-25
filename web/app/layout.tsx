@@ -5,6 +5,7 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { asset } from "@/lib/base-path"
 import { cn } from "@/lib/utils"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     "Welcome to Junaid Hossain's portfolio, i am a dude with an chill attitude.",
   authors: [{ name: "Junaid Hossain" }],
   icons: {
-    icon: "/icon.png",
+    icon: asset("/icon.png"),
   },  openGraph: {
     type: "website",
     siteName: "Junaid Hossain",

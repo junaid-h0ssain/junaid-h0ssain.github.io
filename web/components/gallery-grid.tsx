@@ -1,6 +1,7 @@
 "use client"
 
 import { useCallback, useEffect, useState } from "react"
+import { asset } from "@/lib/base-path"
 
 interface GalleryItem {
   src: string
@@ -22,7 +23,7 @@ export function GalleryGrid() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
   useEffect(() => {
-    fetch("/gallery.json")
+    fetch(asset("/gallery.json"))
       .then((response) =>
         response.ok
           ? response.json()
@@ -74,7 +75,7 @@ export function GalleryGrid() {
             }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={item.src} alt={item.title} loading="lazy" />
+            <img src={asset(item.src)} alt={item.title} loading="lazy" />
           </figure>
         ))}
       </div>
@@ -105,7 +106,7 @@ export function GalleryGrid() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={current.src}
+              src={asset(current.src)}
               alt={current.title}
               style={{
                 maxHeight: "76vh",

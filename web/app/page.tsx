@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { STACK } from "@/data/stack"
+import { asset } from "@/lib/base-path"
 
 export const metadata: Metadata = {
   title: "Junaid Hossain - Portfolio",
@@ -130,7 +131,7 @@ export default function HomePage() {
                       title={item.name}
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={item.src} alt={item.name} loading="lazy" />
+                      <img src={asset(item.src)} alt={item.name} loading="lazy" />
                     </div>
                   ))}
                 </div>
