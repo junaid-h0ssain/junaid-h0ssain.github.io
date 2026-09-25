@@ -32,6 +32,7 @@ export const PROJECTS: Project[] = [
     description:
       "A real-time pizza order tracking web application built with Go, featuring live status updates, customer tracking, and an admin dashboard.",
     tags: ["Go", "Gin", "SQLite"],
+    liveUrl: "https://pizza-tracker-sigma.vercel.app/",
   },
   {
     repo: "junaid-h0ssain/fun-api",
@@ -164,6 +165,7 @@ export const PROJECTS: Project[] = [
     imageAlt: "Dhoni Howar Mojar Khela",
     description: "Monopoly in Bangla — a Bengali board game built with Go.",
     tags: ["Go", "Game"],
+    liveUrl: "https://dhoni-khela.vercel.app/",
   },
   {
     repo: "junaid-h0ssain/lsh26-t012-p10",
@@ -171,6 +173,7 @@ export const PROJECTS: Project[] = [
     badge: "TypeScript",
     description: "LofiStack Hackathon P10 — a prepaid meter recharge advisor.",
     tags: ["TypeScript", "Hackathon"],
+    liveUrl: "https://recharge-advisor.vercel.app",
   },
   {
     repo: "junaid-h0ssain/lsh26-t012-p08",
@@ -179,6 +182,7 @@ export const PROJECTS: Project[] = [
     description:
       "LofiStack Hackathon P08 — school result processing and GPA engine.",
     tags: ["TypeScript", "Hackathon"],
+    liveUrl: "https://results-navy.vercel.app",
   },
   {
     repo: "junaid-h0ssain/sharex",
@@ -186,6 +190,7 @@ export const PROJECTS: Project[] = [
     badge: "TypeScript",
     description: "Single page apps built with TanStack Start.",
     tags: ["TanStack Start", "TypeScript"],
+    liveUrl: "https://sharex-three.vercel.app",
   },
   {
     repo: "junaid-h0ssain/sofi",
@@ -230,5 +235,6 @@ export const PROJECTS: Project[] = [
     badge: "Svelte",
     description: "A fun Valentine's Day card to send.",
     tags: ["Svelte"],
+    liveUrl: "https://valentine-card.junadhon81.workers.dev/",
   },
 ]
