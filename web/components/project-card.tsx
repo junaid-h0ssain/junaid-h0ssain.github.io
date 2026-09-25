@@ -45,7 +45,7 @@ export function ProjectCard({ project }: { project: Project }) {
         {project.liveUrl && (
           <div className="card-actions justify-end">
             <a
-              className="btn btn-sm btn-outline"
+              className="btn btn-sm btn-live"
               href={project.liveUrl}
               target="_blank"
               rel="noreferrer"

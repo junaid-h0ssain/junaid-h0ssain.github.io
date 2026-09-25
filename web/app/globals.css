@@ -342,6 +342,16 @@
   background: var(--portfolio-surface);
   border-color: var(--portfolio-ink);
 }
+.btn-live {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+.btn-live:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  color: #fff;
+}
 
 /* ---------- badges ---------- */
 .badge {

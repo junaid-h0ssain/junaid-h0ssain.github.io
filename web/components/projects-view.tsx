@@ -72,7 +72,7 @@ function CompactCard({ project }: { project: Project }) {
       <div className="mt-auto flex items-center justify-between pt-1">
         {project.liveUrl ? (
           <a
-            className="btn btn-sm btn-outline"
+            className="btn btn-sm btn-live"
             href={project.liveUrl}
             target="_blank"
             rel="noreferrer"
