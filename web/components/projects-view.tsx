@@ -32,7 +32,10 @@ const LANGUAGES = [
 ]
 
 function matchesLanguage(project: Project, language: string) {
-  return project.badge === language || project.tags.includes(language)
+  return (
+    project.badge.split("/").includes(language) ||
+    project.tags.includes(language)
+  )
 }
 
 function CompactCard({ project }: { project: Project }) {

@@ -15,12 +15,12 @@ export const PROJECTS: Project[] = [
   {
     repo: "junaid-h0ssain/next-js-learn",
     title: "next-js-learn",
-    badge: "Vercel",
+    badge: "TypeScript",
     image: `${UPLOAD}liP0ABz9f3F1Lo2lhbDRbjh2pcKCTWdXSa4x853Gukm1PUfe`,
     imageAlt: "Next.js Learn Project",
     description:
       "An event management and discovery platform built with Next.js, featuring interactive 3D graphics, animations, and a MongoDB backend.",
-    tags: ["Next.js", "MongoDB", "Three.js"],
+    tags: ["Next.js", "TypeScript", "MongoDB", "Three.js"],
     liveUrl: "https://next-js-learn-omega-taupe.vercel.app/",
   },
   {
@@ -108,7 +108,7 @@ export const PROJECTS: Project[] = [
   {
     repo: "junaid-h0ssain/booktracker2",
     title: "booktracker2",
-    badge: "Flutter",
+    badge: "Dart/Flutter",
     image: `${UPLOAD}liP0ABz9f3F1upD1YqBd3qLSlH1ANx9IMwcRnWGQy62ZuKOY`,
     imageAlt: "BookTracker",
     description:
@@ -148,12 +148,12 @@ export const PROJECTS: Project[] = [
   {
     repo: "junaid-h0ssain/portfolio-v1",
     title: "portfolio-v1",
-    badge: "Astro",
+    badge: "TypeScript",
     image: `${UPLOAD}liP0ABz9f3F1Rcl69WUXwrt4mkLl3fxHcEYjuqVASvD1gnaW`,
     imageAlt: "Portfolio V1",
     description:
       "A personal portfolio website built with Astro, React, MDX, and Tailwind CSS, featuring project, blog, and resume pages.",
-    tags: ["Astro", "React", "MDX"],
+    tags: ["Astro", "React", "TypeScript", "MDX"],
     liveUrl: "https://portfolio-v1.junadhon81.workers.dev/",
   },
   {
@@ -190,7 +190,7 @@ export const PROJECTS: Project[] = [
   {
     repo: "junaid-h0ssain/sofi",
     title: "sofi",
-    badge: "Dart",
+    badge: "Dart/Flutter",
     description: "An ecommerce site made with Svelte, .NET and Flutter.",
     tags: ["Flutter", "Svelte", ".NET"],
   },
@@ -211,7 +211,7 @@ export const PROJECTS: Project[] = [
   {
     repo: "junaid-h0ssain/mapsv",
     title: "mapsv",
-    badge: "HTML",
+    badge: "JavaScript",
     description:
       "A local web app to view your Google Timeline history on desktop.",
     tags: ["JavaScript", "Maps"],
@@ -219,10 +219,10 @@ export const PROJECTS: Project[] = [
   {
     repo: "junaid-h0ssain/siteblocker",
     title: "siteblocker",
-    badge: "HTML",
+    badge: "Python",
     description:
       "A Windows system tray app to block certain websites for a certain period.",
-    tags: ["JavaScript", "Windows"],
+    tags: ["Python", "Windows"],
   },
   {
     repo: "junaid-h0ssain/valentine-card",
