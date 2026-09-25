@@ -1,5 +1,6 @@
-name: Deploy Next.js to GitHub Pages
+name: Deploy to GitHub Pages
 
+# Deploys the existing static site at root plus the Next.js preview under /web/.
 on:
   push:
     branches: ["main"]
@@ -18,9 +19,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: web
 
     steps:
       - name: Checkout
@@ -33,9 +31,21 @@ jobs:
 
       - name: Install dependencies
         run: bun install
+        working-directory: web
 
-      - name: Build
+      - name: Build Next.js app
         run: bun run build
+        working-directory: web
+
+      - name: Assemble Pages artifact
+        run: |
+          mkdir -p /tmp/site/web
+          # Root static site, excluding git metadata, dependencies,
+          # workflows, and Next.js sources (shipped separately below).
+          tar --exclude='./.git' --exclude='./node_modules' --exclude='./.github' --exclude='./web' -cf - . | tar -xf - -C /tmp/site
+          # Next.js static export, served under /web/.
+          cp -r web/out/. /tmp/site/web/
+          ls /tmp/site /tmp/site/web
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -43,7 +53,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./web/out
+          path: /tmp/site
 
   deploy:
     environment:
