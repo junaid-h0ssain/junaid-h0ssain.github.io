@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { PROJECTS, type Project } from "@/data/projects"
 import { ProjectCard } from "@/components/project-card"
 
@@ -77,12 +77,28 @@ export function ProjectsView() {
   // Shuffled client-side on mount so every visit shows a fresh order
   // (prerendered HTML keeps the default order, avoiding hydration mismatch).
   const [projects, setProjects] = useState<Project[]>(PROJECTS)
+  const [filter, setFilter] = useState<string | null>(null)
+
+  const allTags = useMemo(
+    () => [...new Set(PROJECTS.flatMap((project) => project.tags))].sort(),
+    []
+  )
+
+  const visible = useMemo(
+    () =>
+      filter
+        ? projects.filter((project) => project.tags.includes(filter))
+        : projects,
+    [projects, filter]
+  )
 
   useEffect(() => {
     setProjects(shuffle(PROJECTS))
     try {
       const saved = localStorage.getItem("projects-view")
       if (saved === "compact" || saved === "normal") setMode(saved)
+      const savedFilter = localStorage.getItem("projects-filter")
+      if (savedFilter) setFilter(savedFilter)
     } catch {
       // Ignore storage access issues.
     }
@@ -97,9 +113,19 @@ export function ProjectsView() {
     }
   }
 
+  const selectFilter = (next: string | null) => {
+    setFilter(next)
+    try {
+      if (next) localStorage.setItem("projects-filter", next)
+      else localStorage.removeItem("projects-filter")
+    } catch {
+      // Ignore storage access issues.
+    }
+  }
+
   return (
     <>
-      <div className="mb-6 flex justify-center gap-2" role="group" aria-label="Project view mode">
+      <div className="mb-4 flex justify-center gap-2" role="group" aria-label="Project view mode">
         <button
           type="button"
           className={`btn btn-sm ${mode === "normal" ? "btn-primary" : "btn-outline"}`}
@@ -118,15 +144,50 @@ export function ProjectsView() {
         </button>
       </div>
 
+      <div
+        className="mx-auto mb-6 flex max-w-5xl flex-wrap justify-center gap-2"
+        role="group"
+        aria-label="Filter projects by tech"
+      >
+        <button
+          type="button"
+          className={`btn btn-sm ${filter === null ? "btn-primary" : "btn-outline"}`}
+          aria-pressed={filter === null}
+          onClick={() => selectFilter(null)}
+        >
+          All
+        </button>
+        {allTags.map((tag) => (
+          <button
+            key={tag}
+            type="button"
+            className={`btn btn-sm ${filter === tag ? "btn-primary" : "btn-outline"}`}
+            aria-pressed={filter === tag}
+            onClick={() => selectFilter(filter === tag ? null : tag)}
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
+
+      <p
+        className="mb-6 text-center text-sm"
+        style={{ color: "var(--portfolio-muted)" }}
+        aria-live="polite"
+      >
+        Showing {visible.length} of {projects.length} projects
+        {filter ? ` tagged "${filter}"` : ""}
+      </p>
+
       {mode === "normal" ? (
         <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {projects.map((project) => (
+          {visible.map((project) => (
             <ProjectCard key={project.repo} project={project} />
           ))}
         </div>
       ) : (
         <div className="mx-auto grid max-w-7xl gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {projects.map((project) => (
+          {visible.map((project) => (
             <CompactCard key={project.repo} project={project} />
           ))}
         </div>
