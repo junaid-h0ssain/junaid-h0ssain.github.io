@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
-import { PROJECTS } from "@/data/projects"
-import { ProjectCard } from "@/components/project-card"
+import { ProjectsView } from "@/components/projects-view"
 
 export const metadata: Metadata = {
   title: "Junaid Hossain - Projects",
@@ -23,11 +22,7 @@ export default function ProjectsPage() {
       </section>
 
       <section className="p-10 pt-0">
-        <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {PROJECTS.map((project) => (
-            <ProjectCard key={project.repo} project={project} />
-          ))}
-        </div>
+        <ProjectsView />
       </section>
     </>
   )
