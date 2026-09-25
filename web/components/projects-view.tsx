@@ -10,10 +10,19 @@ function openGithub(repo: string) {
   window.open(`https://github.com/${repo}`, "_blank", "noopener,noreferrer")
 }
 
-function CompactRow({ project }: { project: Project }) {
+function shuffle<T>(items: T[]): T[] {
+  const array = [...items]
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[array[i], array[j]] = [array[j], array[i]]
+  }
+  return array
+}
+
+function CompactCard({ project }: { project: Project }) {
   return (
     <div
-      className="card w-full px-5 py-4"
+      className="card flex w-full flex-col gap-2 p-4"
       tabIndex={0}
       role="link"
       aria-label={`Open ${project.title} on GitHub`}
@@ -30,38 +39,34 @@ function CompactRow({ project }: { project: Project }) {
         }
       }}
     >
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-        <h2 className="font-display text-lg font-bold">{project.title}</h2>
+      <div className="flex flex-wrap items-center gap-2">
+        <h2 className="font-display text-base font-bold">{project.title}</h2>
         <span className="badge badge-secondary badge-sm">{project.badge}</span>
-        <span
-          className="hidden min-w-0 flex-1 truncate lg:inline"
-          style={{ color: "var(--portfolio-muted)" }}
-        >
-          {project.description}
-        </span>
-        <span className="ml-auto flex items-center gap-2">
-          {project.liveUrl && (
-            <a
-              className="btn btn-sm btn-outline"
-              href={project.liveUrl}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`Open ${project.title} live site`}
-            >
-              Live
-            </a>
-          )}
-          <span aria-hidden="true" style={{ color: "var(--portfolio-muted)" }}>
-            &rarr;
-          </span>
-        </span>
       </div>
-      <div className="mt-2 flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-1.5">
         {project.tags.map((tag) => (
           <span key={tag} className="badge badge-sm">
             {tag}
           </span>
         ))}
+      </div>
+      <div className="mt-auto flex items-center justify-between pt-1">
+        {project.liveUrl ? (
+          <a
+            className="btn btn-sm btn-outline"
+            href={project.liveUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Open ${project.title} live site`}
+          >
+            Live
+          </a>
+        ) : (
+          <span />
+        )}
+        <span aria-hidden="true" style={{ color: "var(--portfolio-muted)" }}>
+          &rarr;
+        </span>
       </div>
     </div>
   )
@@ -69,8 +74,12 @@ function CompactRow({ project }: { project: Project }) {
 
 export function ProjectsView() {
   const [mode, setMode] = useState<ViewMode>("normal")
+  // Shuffled client-side on mount so every visit shows a fresh order
+  // (prerendered HTML keeps the default order, avoiding hydration mismatch).
+  const [projects, setProjects] = useState<Project[]>(PROJECTS)
 
   useEffect(() => {
+    setProjects(shuffle(PROJECTS))
     try {
       const saved = localStorage.getItem("projects-view")
       if (saved === "compact" || saved === "normal") setMode(saved)
@@ -111,14 +120,14 @@ export function ProjectsView() {
 
       {mode === "normal" ? (
         <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {PROJECTS.map((project) => (
+          {projects.map((project) => (
             <ProjectCard key={project.repo} project={project} />
           ))}
         </div>
       ) : (
-        <div className="mx-auto flex max-w-5xl flex-col gap-3">
-          {PROJECTS.map((project) => (
-            <CompactRow key={project.repo} project={project} />
+        <div className="mx-auto grid max-w-7xl gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {projects.map((project) => (
+            <CompactCard key={project.repo} project={project} />
           ))}
         </div>
       )}
