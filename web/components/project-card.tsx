@@ -1,13 +1,12 @@
 "use client"
 
-import { useRouter } from "next/navigation"
 import type { Project } from "@/data/projects"
 
 export function ProjectCard({ project }: { project: Project }) {
-  const router = useRouter()
+  const githubUrl = `https://github.com/${project.repo}`
 
   const openProject = () => {
-    router.push(`/project?repo=${encodeURIComponent(project.repo)}`)
+    window.open(githubUrl, "_blank", "noopener,noreferrer")
   }
 
   return (
@@ -15,7 +14,7 @@ export function ProjectCard({ project }: { project: Project }) {
       className="card project-card w-full"
       tabIndex={0}
       role="link"
-      aria-label={`Open ${project.title} project details`}
+      aria-label={`Open ${project.title} on GitHub`}
       onClick={(event) => {
         if ((event.target as HTMLElement).closest("a, button")) return
         openProject()
