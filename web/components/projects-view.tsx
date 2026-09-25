@@ -23,7 +23,6 @@ const LANGUAGES = [
   "C++",
   "Dart",
   "Go",
-  "HTML",
   "Java",
   "JavaScript",
   "PHP",

@@ -75,9 +75,6 @@ export function GalleryGrid() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={item.src} alt={item.title} loading="lazy" />
-            <figcaption>
-              <span>{item.title}</span>
-            </figcaption>
           </figure>
         ))}
       </div>
