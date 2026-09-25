@@ -19,6 +19,22 @@ function shuffle<T>(items: T[]): T[] {
   return array
 }
 
+const LANGUAGES = [
+  "C++",
+  "Dart",
+  "Go",
+  "HTML",
+  "Java",
+  "JavaScript",
+  "PHP",
+  "Python",
+  "TypeScript",
+]
+
+function matchesLanguage(project: Project, language: string) {
+  return project.badge === language || project.tags.includes(language)
+}
+
 function CompactCard({ project }: { project: Project }) {
   return (
     <div
@@ -79,15 +95,12 @@ export function ProjectsView() {
   const [projects, setProjects] = useState<Project[]>(PROJECTS)
   const [filter, setFilter] = useState<string | null>(null)
 
-  const allTags = useMemo(
-    () => [...new Set(PROJECTS.flatMap((project) => project.tags))].sort(),
-    []
-  )
+  const allTags = useMemo(() => LANGUAGES, [])
 
   const visible = useMemo(
     () =>
       filter
-        ? projects.filter((project) => project.tags.includes(filter))
+        ? projects.filter((project) => matchesLanguage(project, filter))
         : projects,
     [projects, filter]
   )
@@ -98,7 +111,8 @@ export function ProjectsView() {
       const saved = localStorage.getItem("projects-view")
       if (saved === "compact" || saved === "normal") setMode(saved)
       const savedFilter = localStorage.getItem("projects-filter")
-      if (savedFilter) setFilter(savedFilter)
+      if (savedFilter && LANGUAGES.includes(savedFilter))
+        setFilter(savedFilter)
     } catch {
       // Ignore storage access issues.
     }
@@ -147,7 +161,7 @@ export function ProjectsView() {
       <div
         className="mx-auto mb-6 flex max-w-5xl flex-wrap justify-center gap-2"
         role="group"
-        aria-label="Filter projects by tech"
+        aria-label="Filter projects by language"
       >
         <button
           type="button"
