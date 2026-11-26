@@ -44,10 +44,10 @@ const EXPERIENCE = [
     tech: "HTML, CSS, JavaScript, React, Next.js, MongoDB, PostgreSQL, Drizzle",
   },
   {
-    role: "Sales Associate",
-    period: "2023 – Present",
-    org: "Teeth Care Center",
-    points: ["Worked as a cashier and sales person in a family run grocery store."],
+    role: "Outbound Outreach Officer",
+    period: "2026 – Present",
+    org: "Originate Marketing/Munshe IT",
+    points: ["Helped with finding right customers for US clients and managed internal software/data."],
   },
 ]
 
