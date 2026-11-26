@@ -4,13 +4,13 @@ import Link from "next/link"
 export const metadata: Metadata = {
   title: "Junaid Hossain - About",
   description:
-    "Beyond the backend — photography, travelling, food, movies, cats, and tinkering.",
+    "Beyond the backend: photography, travelling, food, movies, cats, and tinkering.",
 }
 
 const CARDS = [
   {
     title: "Photography",
-    text: "I carry a camera everywhere — streets, lakes, foggy mornings. Most of my gallery is shot on phones over the years.",
+    text: "I carry a camera everywhere, streets, lakes, foggy mornings. Most of my gallery is shot on phones over the years.",
     link: { href: "/gallery", label: "See the gallery" },
   },
   {
@@ -20,13 +20,14 @@ const CARDS = [
   },
   {
     title: "Food",
-    text: "Certified foodie — from haleem and falooda runs to hunting down the best coffee in Chattogram.",
+    text: "Certified foodie, from haleem and falooda runs to hunting down the best coffee in Chattogram.",
     badges: ["Haleem", "Coffee"],
   },
   {
     title: "Movies & anime",
-    text: "Cinephile hours: films of every genre, plus anime — JoJo and Sakamoto Days are current favorites.",
+    text: "Cinephile hours: films of every genre, plus anime.",
     badges: ["Films", "Anime"],
+    link: { href: "https://www.imdb.com/user/p.e3vjmzw4wtfhrv3jkgwb6n737a?ref_=ext_shr", label: "My List" },
   },
   {
     title: "Cats",
@@ -35,7 +36,7 @@ const CARDS = [
   },
   {
     title: "Tinkering",
-    text: "ESP32 sensors, Linux setups, self-hosted experiments — if it has a shell, I'll poke at it.",
+    text: "ESP32 sensors, Linux setups, self-hosted experiments, if it has a shell, I'll poke at it.",
     link: { href: "/projects", label: "See the projects" },
   },
 ]
